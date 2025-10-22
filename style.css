@@ -20,7 +20,7 @@ h2 {
 
 .container {
     border: 0.5px solid;
-    background-color: #12141d;
+    background-color: black; /*alt color: #12141d */
     opacity: 0.9;
     position: fixed;
     top: 100px;
