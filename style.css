@@ -1,9 +1,41 @@
-p {
+body {
+    margin: 0; 
+    padding: 0; 
+    background-color: #000000; 
+    overflow: hidden;
+}
+
+.name-title {
+    text-align: center;
+    font-weight: 550;
+    color: #f9f9f9fa;
+    font-family: "system-ui", -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.2px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.name-title:hover {
+    color: #00ff00;
+    cursor: pointer;
+}
+
+.subtitle {
+    text-align: center;
+    color: #8f9094;
+    font-size: 16.5px;
+}
+
+/* p {
     text-align: center;
     font-weight: 550;
     font-family: "system-ui", -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: white;
     font-size: 14.5px;
+} */
+
+.social-icons {
+
 }
 
 h2 {
@@ -20,7 +52,7 @@ h2 {
 
 .container {
     border: 0.5px solid;
-    background-color: black; /*alt color: #12141d */
+    background-color: rgba(128, 0, 128, 0.724); /*alt color: #12141d */
     opacity: 0.9;
     position: fixed;
     top: 100px;
@@ -38,4 +70,24 @@ h2 {
     width: 7.5rem;
     position: relative;
     left: 52px;
+}
+
+i {
+    position: relative;
+    align-items: center;
+    left: 20px;
+    top: 50px;
+    cursor: pointer;
+}
+
+i:hover {
+    color: red;
+}
+
+#linkedin {
+    color: red;
+}
+
+i + i {
+    margin-left: 40px;
 }
