@@ -156,3 +156,71 @@ function tick(time) {
     spawnNextDroplet(time);
     requestAnimationFrame(tick);
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const aboutBtn = document.getElementById("abM");
+    const buttonsSection = document.querySelector(".buttons");
+    const aboutSection = document.getElementById("about-section");
+
+    const introText = document.querySelector(".intro-desc");
+    const concText = document.querySelector(".intro-conc");
+
+    const fullText = introText.textContent.trim();
+
+    introText.textContent = "";
+    concText.style.opacity = 0;
+
+
+     const backBtn = document.getElementById("backBtn");
+
+    backBtn.addEventListener("click", () => {
+        aboutSection.style.transition = "opacity 0.6s ease";
+        aboutSection.style.opacity = "0";
+
+        setTimeout(() => {
+            aboutSection.style.display = "none";
+            buttonsSection.style.display = "block";
+            buttonsSection.style.opacity = "1";
+
+            introText.textContent = "";
+            concText.style.opacity = 0;
+        }, 600);
+    });
+
+    aboutBtn.addEventListener("click", () => {
+        buttonsSection.style.transition = "opacity 0.6s ease";
+        buttonsSection.style.opacity = "0";
+
+        setTimeout(() => {
+            buttonsSection.style.display = "none";
+            aboutSection.style.display = "block";
+            aboutSection.style.opacity = "1";
+
+            introText.textContent = "";
+            concText.style.opacity = 0;
+
+            typeText(introText, fullText, 30, () => {
+                concText.style.transition = "opacity 1s ease";
+                concText.style.opacity = 1;
+            });
+        }, 600);
+    });
+
+    function typeText(element, text, speed, onComplete) {
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(typing, speed);
+            }
+            else if (onComplete) {
+                onComplete();
+            }
+        }
+        typing();
+    }
+
+   
+});
+
