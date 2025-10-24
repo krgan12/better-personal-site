@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js"></script> 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"> -->
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+    <link rel="icon" type="image/png" href="boxed.png" />
+    <meta name="author" content="Keagan Rodrigues">
 
     <title>Keagan Rodrigues</title>
 
 </head>
 <body onload="init()">
-    <canvas id="canvas" width="2000" height="1000" style="display: block; margin: 0 auto; "></canvas>
+    <!-- <canvas id="canvas" width="2000" height="1000" style="display: block; margin: 0 auto; "></canvas> -->
     <section class="section">
         <div class="container">
             <img class="img-1" src="images/keagan.jpeg" alt="HI Image">
@@ -57,11 +58,69 @@
     <section class="buttons container-2">
         <button id="proj">Projects</button>
         <button id="abM">About Me</button>
-        <button id="cont">Contact</button>
+        <button id="cont"><a id="e-mail-tag" href="mailto:keagan123@outlook.com">Contact</a></button>
     </section>
 
-    <section class="projects container-2">
-        
+    <section class="projects container-2" style="">
+
+        <div class="project-card">
+            <h2 class="project-type">Web App / PWA</h2>
+            <h3 class="project-title">Sheridan Nexus</h3>
+            <p class="project-desc">
+                A platform that helps students throughout their Sheridan journey. Plan semesters, 
+                find course information, compare average GPAs, and coruse reviews.
+            </p>
+
+            <div class="tech-stack">
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Next.js</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">MongoDB</span>
+            </div>
+            <!-- <div class="img-placeholder"></div> -->
+             <img src="" alt="" class="project-image">
+            <a href="#" target="_blank" class="view-link">VIEW PROJECT</a>
+        </div>
+
+        <div class="project-card">
+            <h2 class="project-type">Web App</h2>
+            <h3 class="project-title">NHL Game Stats App 📈</h3>
+            <p class="project-desc">
+                Application that scrapes the NGL for game-related data, provides live score updates,
+                and generated reports for the top performing teams in the league.
+            </p>
+            <div class="tech-stack">
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">NHL Api</span>
+            </div>
+            <!-- <div class="img-placeholder"></div> -->
+             <img src="" alt="" class="project-image">
+            <a href="#" target="_blank" class="view-link">VIEW PROJECT</a>
+        </div>
+
+
+        <div class="project-card">
+            <h2 class="project-type">Web App</h2>
+            <h3 class="project-title">Quotes App 🗣️</h3>
+            <p class="project-desc">
+                Application that scrapes motivational quotes from a custom API to compare multiple
+                quotes and help users stay focused in their daily life.
+            </p>
+            <div class="tech-stack">
+                <span class="tag">JavaScript</span>
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Flask</span>
+                <span class="tag">Quotes Api</span>
+            </div>
+            <!-- <div class="img-placeholder"></div> -->
+             <img src="" alt="" class="project-image">
+            <a href="#" target="_blank" class="view-link">VIEW PROJECT</a>
+        </div>
     </section>
     
 </body>
