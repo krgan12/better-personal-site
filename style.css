@@ -1,15 +1,27 @@
 body {
-    margin: 0; 
-    padding: 0; 
-    background-color: #000000; 
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
     overflow: auto;
     overflow-y: auto;
-    
+}
+
+#content-wrapper {
+    opacity: 0;
+    transition: scale(0.98);
+    transition: opacity 1.5s ease, transform 1s ease;
+    position: relative;
+    z-index: 2; /* ensures it stays on top of the canvas */
+}
+
+#content-wrapper.fade-in {
+    opacity: 1;
+    transform: scale(1);
 }
 
 html {
-    /* overflow: auto; */
-    /* overflow-y: auto; */
+/* overflow: auto; */
+/* overflow-y: auto; */
 }
 
 .name-title {
@@ -22,9 +34,14 @@ html {
     transition: color 0.3s ease;
 }
 
+.name-title:hover {
+    cursor: alias;
+    /* color: red; */
+}
+
 /* .name-title:hover {
-    color: #00ff00;
-    cursor: pointer;
+color: #00ff00;
+cursor: pointer;
 } */
 
 .subtitle {
@@ -54,12 +71,13 @@ h2 {
 }
 
 .container {
-    border: 0.5px solid;
-    background-color: #1e2028; /*alt color: #12141d; rgba(128, 0, 128, 0.724)  prime: rgb(32, 31, 31) rgb(27, 27, 27)*/
+border: 0.5px solid;
+    background-color: #1e2028; /*alt color: #12141d; rgba(128, 0, 128, 0.724) prime: rgb(32, 31, 31) rgb(27, 27, 27)*/
     opacity: 0.9;
     position: fixed;
     top: 100px;
-    left: 690px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     border-radius: 5px;
     padding: 50px;
     width: 225px;
@@ -86,7 +104,9 @@ h2 {
     height: 7.5rem;
     width: 7.5rem;
     position: relative;
-    left: 52px;
+    left: 0 !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
 a {
@@ -103,17 +123,17 @@ a + a {
 }
 
 #linkedin {
-    color: white; 
+    color: white;
     font-size: 24px;
 }
 
 #github {
-    font-size: 24px; 
+    font-size: 24px;
     color: white;
 }
 
 #email {
-    font-size: 24px; 
+    font-size: 24px;
     color: whitesmoke;
 }
 
@@ -159,7 +179,7 @@ a + a {
 .title {
     text-transform: uppercase;
     position: relative;
-    left: 815px;
+    left: 860px;
     top: -100px;
     font-size: 1.2rem;
     font-weight: 400;
@@ -172,12 +192,17 @@ a + a {
 
 .buttons {
     position: fixed;
-    left: 605px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
     top: 600px;
 }
 
 button {
     font-size: 18px;
+    border-color: #268700;
     padding: 12px 12px;
     font-weight: 600;
     color: #00ff00;
@@ -186,8 +211,8 @@ button {
     cursor: pointer;
     text-transform: uppercase;
     box-shadow: 0 0 5px #00ff00,
-                0 0 10px #00ff00,
-                inset 0 0 5px #00ff00
+    0 0 10px #00ff00,
+    inset 0 0 5px #00ff00
     ;
     transition: all 0.2s ease-in-out;
 }
@@ -196,26 +221,26 @@ button:hover {
     color: #000;
     background-color: #00f700;
     box-shadow: 0 0 10px #00ff00,
-                0 0 20px #00ff00,
-                0 0 40px #00ff00,
-                0 0 80px #00ff00;
+    0 0 20px #00ff00,
+    0 0 40px #00ff00,
+    0 0 80px #00ff00;
     transform: scale(1.05);
 }
 
 @keyframes pulse {
-  0%, 100% {
+    0%, 100% {
     box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, inset 0 0 5px #00ff00;
-  }
-  50% {
+    }
+    50% {
     box-shadow: 0 0 15px #00ff00, 0 0 35px #00ff00, inset 0 0 10px #00ff00;
-  }
+    }
 }
 
 button:active {
     transform: scale(0.97);
     box-shadow: 0 0 5px #38fb69,
-                0 0 15px #38fb69,
-                inset 0 0 10px #38fb69
+    0 0 15px #38fb69,
+    inset 0 0 10px #38fb69
     ;
     animation: pulse 1.5s infinite;
 }
@@ -244,9 +269,12 @@ button + button {
 .back-btn {
     position: absolute;
     bottom: 40px;
-    top: 800px;
-    left: 50%;
-    transform: translateX(-50%);
+    /* top: 800px; */
+    top: auto !important;
+    margin: 1rem auto !important;
+    text-align: center !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     background: rgba(0, 0, 0, 0.6);
     border: none;
     border-radius: 50%;
@@ -289,7 +317,9 @@ button + button {
 
 .projects {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: 250px;
     align-items: stretch;
     flex-wrap: wrap;
     gap: 2rem;
@@ -405,25 +435,25 @@ button + button {
 
 
 
-/* .project-image { 
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+/* .project-image {
+width: 100%;
+height: 150px;
+object-fit: cover;
+border-radius: 10px;
+margin-top: 1rem;
+margin-bottom: 1rem;
 } */
 
 #backBtnProjects {
-    /* position: fixed; */
-    /* top: 50px; */
+/* position: fixed; */
+/* top: 50px; */
 }
 
 .projects .back-btn {
-    /* position: fixed;
-    bottom: -50%;
-    top: 900px;
-    left: 50%; */
-    /* transform: translateX(-50%); */
-    /* margin-top: 3rem; */
+/* position: fixed;
+bottom: -50%;
+top: 900px;
+left: 50%; */
+/* transform: translateX(-50%); */
+/* margin-top: 3rem; */
 }
