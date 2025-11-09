@@ -452,8 +452,8 @@ margin-bottom: 1rem;
 } */
 
 #backBtnProjects {
-    position: fixed;
-    top: 50px;
+position: fixed;
+top: 50px;
 }
 
 .projects .back-btn {
