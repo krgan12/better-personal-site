@@ -35,7 +35,7 @@ html {
 }
 
 .name-title:hover {
-    cursor: alias;
+    /* cursor: none; */
     /* color: red; */
 }
 
@@ -166,7 +166,7 @@ a + a {
 
 .intro-desc {
     position: relative;
-    left: 700px;
+    left: 740.5px;
     text-align: center;
     letter-spacing: 0.2px;
     line-height: 1.6;
@@ -275,7 +275,7 @@ button + button {
     /* bottom: 40px; */
     /* top: 800px; */
     top: auto !important;
-    bottom: 55px;
+    bottom: -650px;
     left: 0;
     margin: 1rem auto !important;
     text-align: center !important;
@@ -390,7 +390,7 @@ button + button {
 .project-desc {
     font-size: 16px;
     color: #8f9094;
-    line-height: 1.5;
+    line-height: 1.45;
     position: relative;
     margin-bottom: 1rem;
     margin-top: 8px;
@@ -452,8 +452,8 @@ margin-bottom: 1rem;
 } */
 
 #backBtnProjects {
-position: fixed;
-top: 50px;
+    position: fixed;
+    top: 50px;
 }
 
 .projects .back-btn {
