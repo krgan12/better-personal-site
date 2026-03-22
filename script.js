@@ -3,7 +3,7 @@ var tileSize = 20;
 // a higher fade factor will make the characters fade quicker
 var fadeFactor = 0.04;
 var spawnDelay = 75; ///50 is the ideal one? 75 is the better one
-var dropletSpeed = 0.17; //0.17 <- Better one / 0.25
+var dropletSpeed = 0.159; //0.17 <- Better one / 0.25
 
 var canvas;
 var ctx;
