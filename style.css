@@ -467,3 +467,30 @@ left: 50%; */
 /* transform: translateX(-50%); */
 /* margin-top: 3rem; */
 }
+
+.res-text {
+    /* display: flex; */
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "system-ui", -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20.5px;
+    position: relative;
+    align-self: flex-start;
+    color: white;
+    text-underline-offset: 4px;
+    text-align: left;
+    font-weight: 500;
+    top: 10px;
+    left: 70px;
+    /* transition: 0.2s ease; */
+
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+}
+
+.res-text:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #00ff00;
+    transition: 0.55s ease;
+}
