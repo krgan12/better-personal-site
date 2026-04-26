@@ -289,63 +289,88 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-// const wrapper = document.getElementById("projectsWrapper");
-// const cards = document.querySelectorAll(".project-card");
-// const leftArrow = document.getElementById("arrow-left");
-// const rightArrow = document.getElementById("arrow-right");
+document.addEventListener("DOMContentLoaded", function () {
+    const wrapper = document.getElementById("projectsWrapper");
+const cards = document.querySelectorAll(".project-card");
+const leftArrow = document.getElementById("arrow-left");
+const rightArrow = document.getElementById("arrow-right");
 
-// let currentPage = 0;
-// const cardsPerPage = 3;
-// const totalPages = Math.ceil(cards.length / cardsPerPage);
+let currentPage = 0;
+const cardsPerPage = 3;
 
-// function updateView() {
-//     const cardWidth = cards[0].offsetWidth + 32; // 32 = approx. gap
-//     const offset = currentPage * cardsPerPage * cardWidth;
+function updateView() {
+    const card = cards[0];
+    if (!card) {return;}
+    // const gap = 32; // matches your gap: 2rem
+    const styles = window.getComputedStyle(wrapper);
+    const gap = parseFloat(styles.gap) || 0;
+    // const cardWidth = card.offsetWidth + gap;
+    const cardWidth = card.getBoundingClientRect().width;
 
-//     wrapper.style.transform = `translateX(-${offset}px)`;
-//     wrapper.style.transition = "transform 0.5s ease";
+    const step = cardWidth + gap;
 
-//     // LEFT arrow
-//     if (currentPage === 0) {
-//         leftArrow.style.display = "none";
-//     }
-//     else {
-//         leftArrow.style.display = "flex";
-//     }
+    // const offset = currentPage * cardsPerPage * cardWidth;
+    const offset = currentPage * cardsPerPage * step;
+    wrapper.style.transform = `translateX(-${offset}px)`;
 
-//     // RIGHT Arrow 
-//     if (currentPage >= totalPages - 1) {
-//         rightArrow.style.display = "none";
-//     }
-//     else {
-//         rightArrow.style.display = "flex";
-//     }
-// }
+    const totalPages = Math.ceil(cards.length / cardsPerPage);
 
-// // RIGHT CLICK -> Next 3
-// rightArrow.addEventListener("click", () => {
-//     if (currentPage < totalPages - 1) {
-//         currentPage++;
-//         updateView();
-//     }
-// });
+    // Hide arrows if 3 or less cards
+    if (cards.length <= cardsPerPage) {
+        leftArrow.style.display = "none";
+        rightArrow.style.display = "none";
+        return;
+    }
 
-// // LEFT CLICK -> previous 3
-// leftArrow.addEventListener("click", () => {
-//     if (currentPage > 0) {
-//         currentPage--;
-//         updateView();
-//     }
-// });
+    leftArrow.style.display = currentPage === 0 ? "none" : "flex";
+    rightArrow.style.display = currentPage >= totalPages - 1 ? "none": "flex";
+}
 
-// // INITIAL STATE
-// window.addEventListener("load", () => {
-//     if (cards.length <= 3) {
-//         leftArrow.style.display = "none";
-//         rightArrow.style.display = "none";
-//     }
-//     else {
-//         updateView();
-//     }
-// });
- 
+// RIGHT
+rightArrow.addEventListener("click", () => {
+    const totalPages = Math.ceil(cards.length / cardsPerPage);
+    if (currentPage < totalPages - 1) {
+        currentPage++;
+        updateView();
+    }
+});
+
+// LEFT
+leftArrow.addEventListener("click", () => {
+    if (currentPage > 0) {
+        currentPage--;
+        updateView();
+    }
+});
+
+// INIT
+window.addEventListener("load", () => {
+    // updateView();
+    requestAnimationFrame(() => {
+        updateView();
+    });
+});
+
+function imagesLoadedFix() {
+    const imgs = document.querySelectorAll('.project-card img');
+    let loaded = 0;
+
+    imgs.forEach(img => {
+        if (img.complete) {
+            loaded++;
+        }
+        else {
+            img.addEventListener("load", () => {
+                loaded++;
+                if (loaded === imgs.length) {
+                    updateView();
+                }
+            });
+        }
+    });
+
+    if (loaded === imgs.length) {
+        updateView();
+    }
+}
+})

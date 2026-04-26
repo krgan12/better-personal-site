@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +5,6 @@
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js"></script> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    
-
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
@@ -33,7 +29,7 @@
     <div id="content-wrapper">
     <section class="section">
         <div class="container">
-            <img class="img-1" src="images/keagan.jpeg" alt="">
+            <img class="img-1" src="images/Keagan2.jpeg" alt="">
             <p class="name-title">Keagan Rodrigues</p>
             <h2 class="subtitle">Software Engineer</h2>
             <!-- <a target="_blank" href="files/Keagan_Rodrigues_Dev_Resume.pdf" class="res-text">Resume</a> -->
@@ -74,9 +70,19 @@
         <button id="cont">Contact</button>
     </section>
     <!-- Projects Section -->
-     <section class="projects container-2" style="display: none;">        
+     <section class="projects container-2" style="display: none;">
+        
+        <!-- Left Arrow -->
+        <button class="nav-arrow" id="arrow-left">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
 
-        <div class="project-card">
+        <button id="arrow-right" class="nav-arrow">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+        <div class="projects-viewport">
+           <div id="projectsWrapper">
+             <div class="project-card">
             <h2 class="project-type">FULL STACK APP</h2>
             <h3 class="project-title">ChatGPT Clone</h3>
             <p class="project-desc">
@@ -99,13 +105,13 @@
              <img src="images/chatgpt-clone.png" alt="" class="project-image">
         </div>
 
-        <div class="project-card">
+        <div id="quote-card" class="project-card">
             <h2 class="project-type">Web App</h2>
             <h3 class="project-title">🏒 NHL Faceoff 🏒</h3>
             <p class="project-desc">
                 Sports intelligence platform that leverages the NHL API to compare two different teams, records, 
                 and player stats to find the best teams in the league.
-                
+            </p>
             <div class="tech-stack">
                 <span class="tag">JavaScript</span>
                 <span class="tag">Next.js</span>
@@ -122,7 +128,7 @@
         </div>
 
 
-        <div id="quote-card" class="project-card">
+        <div class="project-card">
             <h2 class="project-type">Web App</h2>
             <h3 class="project-title">Quotes App 🗣️</h3>
             <p id="quotes-p" class="project-desc">
@@ -140,7 +146,9 @@
              <img id="quote-p" src="images/quotesWebsite.png" alt="" class="project-image">
             
         </div>
-        <!-- <div id="quote-card-1" class="project-card">
+
+        
+        <div id="project-card quote-card-1" class="project-card">
             <h2 class="project-type">Web / FULL STACK APP</h2>
             <h3 class="project-title">CoderCollab</h3>
             <p id="quotes-p" class="project-desc">
@@ -158,14 +166,86 @@
             <a href="#" target="_blank" class="view-link">VIEW PROJECT</a>
              <img id="quote-p" src="" alt="" class="project-image">
             
-        </div> -->
+        </div>
+         <div id="project-card quote-card-1" class="project-card">
+            <h2 class="project-type">Web App</h2>
+            <h3 class="project-title">Jonathan's Portfolio Site</h3>
+            <p id="quotes-p" class="project-desc">
+               A one piece themed portfolio website designed and built for a friend.
+            </p>
+            <div class="tech-stack">
+                <span class="tag">Next.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">React.js</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">TailwindCSS</span>
+            </div>
+            <a href="#" target="_blank" class="view-link">VIEW PROJECT</a>
+             <img id="quote-p" src="" alt="" class="project-image">
+            
+        </div>
+        <div id="project-card quote-card-1" class="project-card">
+            <h2 class="project-type">Web App</h2>
+            <h3 class="project-title">Mobile Computing Club Website</h3>
+            <p id="quotes-p" class="project-desc">
+                A website designed for the up-coming revival of the Mobile Computing Club at Sheridan College. 
+                [Status: IN PROGRESS]
+            </p>
+            <div class="tech-stack">
+                <span class="tag">Next.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">React.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">TailwindCSS</span>
+            </div>
+            <a href="#" target="_blank" class="view-link">VIEW PROJECT</a>
+             <img id="quote-p" src="" alt="" class="project-image">
+            
+        </div>
+        <div id="project-card quote-card-1" class="project-card">
+            <h2 class="project-type">AI / ML Web App?</h2>
+            <h3 class="project-title">AI Conversational Analyzer</h3>
+            <p id="quotes-p" class="project-desc">
+               A AI / ML Application that analyzes human conversations to pick up on patterns, tonality, speed of talking and etc. to get a better understandinf of human behaviour.
+                [Status: IN PROGRESS]
+            </p>
+            <div class="tech-stack">
+                <span class="tag">Next.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">React.js</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">TailwindCSS</span>
+            </div>
+            <a href="#" target="_blank" class="view-link">VIEW PROJECT</a>
+             <img id="quote-p" src="" alt="" class="project-image">
+            
+        </div>
+       
+         <div id="project-card quote-card-1" class="project-card">
+            <h2 class="project-type">Web App</h2>
+            <h3 class="project-title">Personal Portfolio Site</h3>
+            <p id="quotes-p" class="project-desc">
+               A personal portfolio website with a [REDACTED] styled-theme for the [REDACTED] [REDACTED] game. Intend to start + finish it after landing a FANNG or equivalent job.
+            </p>
+            <div class="tech-stack">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+            </div>
+            <a href="#" target="_blank" class="view-link">VIEW PROJECT</a>
+             <img id="quote-p" src="" alt="" class="project-image">
+            
+        </div>
+           </div>
+        </div>
+        
         
         <button class="back-btn" id="backBtnProjects">
             <i id="left-btn" class="fa-solid fa-angle-left"></i>
         </button>
     </section> 
 
-    <!-- Todo: Contact Me Section -->
+    Todo: Contact Me Section
     <section></section>
     </div>
 </body>
