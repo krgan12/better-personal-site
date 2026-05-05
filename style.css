@@ -575,3 +575,82 @@ left: 50%; */
 .nav-arrow.hidden {
     display: none;
 }
+
+.tech-stack-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    /*  Ensures it sits nicely under text */
+    align-items: center;
+    /* flex-wrap: wrap; if many icons */
+}
+
+.tech-stack-icons img {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+
+    /* transition: all 0.3s ease; */
+}
+
+.tech-stack-icons img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px #00FF00);
+}
+
+.tech-stack-icons img::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: black;
+    color: #00FF00;
+
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+.tech-stack-icons img:hover::after {
+    opacity: 1;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: black;
+    color: #00FF00;
+
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+.tooltip:hover:after {
+    opacity: 1;
+}
